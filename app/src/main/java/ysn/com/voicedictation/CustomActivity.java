@@ -74,23 +74,12 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        new RxPermissions(this)
-                .request(UShareEntry.PERMISSION_LIST)
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(granted -> {
-                    if (granted) {
-                        init();
-                    } else {
-                        Toast.makeText(this, "权限不足", Toast.LENGTH_SHORT).show();
-                    }
-                });
+        init();
     }
 
     private void init() {
         setContentView(R.layout.activity_custom);
-        SpeechUtility.createUtility(this, SpeechConstant.APPID + "=58d9cd0a");
+        SpeechUtility.createUtility(this, SpeechConstant.APPID + "=5b1e2ec3");
         initIat();
         findViewById(R.id.custom_activity_start_btn).setOnClickListener(this);
         contentEditText = findViewById(R.id.custom_activity_content_et);
@@ -220,8 +209,6 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
 
     private void parseResult(RecognizerResult results) {
         String result = JsonParser.parseIatResult(results.getResultString());
-        Logcat.d("parseResult-result: " + result);
-
         String sn = null;
         // 读取json结果中的sn字段
         try {

@@ -36,14 +36,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
         setContentView(R.layout.activity_main);
         findViewById(R.id.main_activity_custom).setOnClickListener(this);
+        findViewById(R.id.main_activity_dialog).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.main_activity_custom:
-                Intent intent = new Intent(MainActivity.this, CustomActivity.class);
-                startActivity(intent);
+                startActivity( new Intent(MainActivity.this, CustomActivity.class));
+                break;
+            case R.id.main_activity_dialog:
+                startActivity(new Intent(MainActivity.this, DialogActivity.class));
                 break;
             default:
         }
