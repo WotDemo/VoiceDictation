@@ -133,8 +133,8 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
         } else {
             // 设置语言 简体中文
             mIat.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
-            // 设置语言区域
-            mIat.setParameter(SpeechConstant.ACCENT, lag);
+            //中文普通话 mandarin (默认)、粤语 cantonese 、四川话 lmz
+            mIat.setParameter(SpeechConstant.ACCENT, "cantonese");
         }
         // 设置语音前端点:静音超时时间，即用户多长时间不说话则当做超时处理
         mIat.setParameter(SpeechConstant.VAD_BOS, mSharedPreferences.getString("iat_vadbos_preference", "4000"));
