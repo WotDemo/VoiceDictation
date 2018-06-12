@@ -7,6 +7,7 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
@@ -181,6 +182,10 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 // 显示听写对话框
                 mIatDialog.setListener(mRecognizerDialogListener);
                 mIatDialog.show();
+                //隐藏讯飞输入法提供字样
+                TextView textLink = mIatDialog.getWindow().getDecorView().findViewWithTag("textlink");
+                textLink.setText("");
+                textLink.setOnClickListener(null);
                 ToastUtils.showNormalToast("开始录音");
                 break;
             default:
