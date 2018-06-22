@@ -34,7 +34,7 @@
 <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 ```
 
-5.添加[XfHelper](https://github.com/yangsanning/VoiceDictation/blob/master/app/src/main/java/ysn/com/voicedictation/helper/XfHelper.java)辅助类以及[JsonParser](https://github.com/yangsanning/VoiceDictation/blob/master/app/src/main/java/ysn/com/voicedictation/util/JsonParser.java)数据解析类
+5. 添加[XfHelper](https://github.com/yangsanning/VoiceDictation/blob/master/app/src/main/java/ysn/com/voicedictation/helper/XfHelper.java)辅助类以及[JsonParser](https://github.com/yangsanning/VoiceDictation/blob/master/app/src/main/java/ysn/com/voicedictation/util/JsonParser.java)数据解析类
 
 6. 将XfHelper类中的APP_ID替换成你在讯飞平台注册的id
 ```java
