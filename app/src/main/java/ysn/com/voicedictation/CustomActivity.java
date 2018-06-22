@@ -101,7 +101,6 @@ public class CustomActivity extends AppCompatActivity implements View.OnClickLis
     private void initIat() {
         // 使用SpeechRecognizer对象，可根据回调消息自定义界面；
         mIat = SpeechRecognizer.createRecognizer(this, mInitListener);
-        // 初始化听写Dialog，如果只使用有UI听写功能，无需创建SpeechRecognizer
         mSharedPreferences = getSharedPreferences(PRIVATE_SETTING, Activity.MODE_PRIVATE);
     }
 
