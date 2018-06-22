@@ -39,6 +39,8 @@ import ysn.com.voicedictation.util.JsonParser;
  */
 public class XfHelper implements InitListener, RecognizerListener {
 
+    private static final String APP_ID = "5b1e2ec3";
+
     /**
      * 缓存数据的名称
      */
@@ -87,7 +89,7 @@ public class XfHelper implements InitListener, RecognizerListener {
     }
 
     private XfHelper(Context context) {
-        SpeechUtility.createUtility(context, SpeechConstant.APPID + "=5b1e2ec3");
+        SpeechUtility.createUtility(context, SpeechConstant.APPID + "=" + APP_ID);
         initSpeechRecognizer(context);
     }
 
