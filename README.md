@@ -1,7 +1,9 @@
 # VoiceDictation
 讯飞语音的一个小Demo
 
-## 自定义UI使用步骤
+---
+#### 自定义UI使用步骤
+
 1. 去[讯飞开放平台](http://www.xfyun.cn/)下载好SDK
 
 2. 将开发工具包中libs目录下的 Msc.jar,Sunflower.jar,armeab 拷贝到Android工程的jniLibs目录
@@ -34,9 +36,15 @@
 
 5.添加[XfHelper](https://github.com/yangsanning/VoiceDictation/blob/master/app/src/main/java/ysn/com/voicedictation/helper/XfHelper.java)辅助类以及[JsonParser](https://github.com/yangsanning/VoiceDictation/blob/master/app/src/main/java/ysn/com/voicedictation/util/JsonParser.java)数据解析类
 
-6.直接使用
+6. 将XfHelper类中的APP_ID替换成你在讯飞平台注册的id
+```java
+private static final String APP_ID = "5b1e2ec3";
+```
+
+7. 调用一下方法即可使用
 ```java
  XfHelper.get(this).setOnXfListener(new XfHelper.OnXfListener() {
+ 
             @Override
             public void onVolumeChanged(int volume) {
                 
@@ -57,4 +65,9 @@
 
             }
         }).start();
+```
+
+8. 资源释放
+```java
+XfHelper.get(this).destroy();
 ```
